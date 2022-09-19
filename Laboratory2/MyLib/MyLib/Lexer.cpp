@@ -76,7 +76,7 @@ namespace MyLib {
 					}
 					else if (str[i] == ',' && str[i+1] == '}') { // {x,}
 						buf.push_back('+');
-						vec.push_back(buf);
+						vec.push_back(buf); 
 						buf.clear();
 						++i;
 					}
@@ -106,8 +106,11 @@ namespace MyLib {
 				break;
 
 			case '+':
-				if ((str[i - 1] == '(') || (str[i - 1] == '|') || (str[i + 1] == '+')) {
+				if ((str[i - 1] == '(') || (str[i - 1] == '|')) {
 					throw std::exception("Invalid expression (+)! Please enter the string again.");
+					break;
+				}
+				else if (str[i + 1] == '+') {
 					break;
 				}
 				else {

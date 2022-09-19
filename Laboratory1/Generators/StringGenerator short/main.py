@@ -14,7 +14,7 @@ for i in trange(count):
     mas = [] #буффер, массив символов новой строки
     if random.randint(0, 2) != 0:
         for j in strMas[i]: #для каждого символа в старой строке
-            if random.randint(0, 3) == 0: # c вероятностью (0 1 2 3) 0.25 уродуем строку
+            if random.randint(0, 3) == 0: # c вероятностью (0 1 2 3) 0.25 изменяем строку
                 j = chr((ord(j) + random.randint(0, 255)) % 255) #измененный символ
             mas.append(j)  # добавляем символ (нормальный или измененный)
         strMas[i] = ''.join(mas)  # перезаписываем в массив новую строку
@@ -23,7 +23,7 @@ for i in trange(count):
         optimas[i] = strMas[i]
 
 #здесь все строки уже изменены и записаны в strMas
-f = open("100000.txt", "w", encoding="utf-8")
+f = open("Generated_strings.txt", "w", encoding="utf-8")
 f.seek(0, 0)
 for i in range(count):
     f.write(optimas[i] + "\n")

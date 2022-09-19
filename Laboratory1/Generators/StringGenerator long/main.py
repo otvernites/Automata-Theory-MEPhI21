@@ -3,7 +3,7 @@ import random
 import string
 from tqdm import trange
 
-#Создали массив со строками нужной размерности (потом запихнем его в файл)
+#Создали массив со строками нужной размерности (потом положим его в файл)
 count = 1
 strMas = [0] * count
 optimas = [0] * count

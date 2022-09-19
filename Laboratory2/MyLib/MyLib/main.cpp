@@ -13,9 +13,11 @@ int main()
 	DFA* result = new DFA();
 	DFA* result1 = new DFA();
 
-	
-	re->Compile("(1:(2:ab|g+)c)+d");
+	// (1:(2:ab|g+)c)+d
+	re->Compile("((b|a)(b|a)(b|a)+)+");
 	std::vector<std::string> veco = re->FindAll("aabggcdcggcabcabcd");
+
+
 	std::vector<std::string> gr1 = (*re)[2];
 	//re->Compile("(1:ds)q\\1(2:q)\\2");
 	//re1->Compile("a(1:7|#+)x(2:qb)");
